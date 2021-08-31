@@ -1,0 +1,13 @@
+h2{
+    text-align: center;
+    color: rgb(97, 33, 33);
+    padding-top: 20px;
+}
+
+hr{
+    margin: 0 40% 0 40%;
+}
+img{
+    height: 100px;
+    width: 150px;
+}
