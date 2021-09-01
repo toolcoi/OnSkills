@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        form{
+            max-width: 400px;
+            margin: auto;
+        }
+        p{
+            color: red;
+        }
+        h2{
+            text-align: center;
+            color: rgb(10, 10, 10);
+        }
+    </style>
+    <div class="container">
+
+        <form>
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Tài khoản:</label>
+                <input type="username" class="form-control" id="username" placeholder="Enter username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Mật khẩu:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <p id="error"></p>
+            <button onclick="checkLogin()" type="button" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    function checkLogin(){
+        var tk = document.getElementById("username").value;
+        var mk = document.getElementById("pwd").value;
+        var bug = document.getElementById("error");
+        var CORRECT_TK = "admin";
+        var CORRECT_MK = "admin123";
+        if(tk== CORRECT_TK && mk== CORRECT_MK){
+		    bug.innerHTML = "Đăng nhập thành công"
+        }
+        else if(tk=="" && mk==""){
+            bug.innerHTML = "Please enter your information.";
+
+        }
+        else if(tk==""){
+            bug.innerHTML = "Please enter your email.";
+
+        }
+        else if(mk==""){
+            bug.innerHTML = "Please enter your password.";
+
+        }
+        else if(mk.length < 6){
+            bug.innerHTML = "Your password must contain at least 6 characters";
+        }
+        else if(tk != CORRECT_TK && mk != CORRECT_MK){
+            bug.innerHTML = "Tài khoản hoặc mật khẩu sai!";
+        }
+    }
+</script>
+</html>
