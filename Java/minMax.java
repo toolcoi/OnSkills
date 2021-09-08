@@ -1,12 +1,31 @@
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 
 public class minMax {
+   public int minArr(int []arr){
+      int min = arr[0];
+      for(int i =1; i< arr.length; i++){
+         if(arr[i] < min){
+            min = arr[i];
+         }
+      }
+      return min;
+   }
+   public int maxArr(int []arr){
+      int max = 0;
+      for(int i =1; i< arr.length; i++){
+         if(arr[i] > max){
+            max = arr[i];
+         }
+      }
+      return max;
+   }
    public static void main(String[] args) {
-      Integer[] numbers = { 8, 2, 7, 1, 4, 9, 5};
-      int min = (int) Collections.min(Arrays.asList(numbers));
-      int max = (int) Collections.max(Arrays.asList(numbers));
-      System.out.println("Min number: " + min);
-      System.out.println("Max number: " + max);
+      int[] numbers = { 8, 2, 7, 1, 4, 9, 5};
+      minMax m = new minMax();
+      System.out.println("Max:"+m.maxArr(numbers));
+      System.out.println("Min:"+m.minArr(numbers));
+      
+      
+      
    }
 }

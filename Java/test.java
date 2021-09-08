@@ -1,10 +1,8 @@
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Stack;
 
-public class ConvertNumber {
+public class test {
     public static final char CHAR_55 = 55;
-    private static Scanner sc = new Scanner(System.in);
-       
-    //n là số nguyên , b là hệ cơ số
     public static String convertNumber(int n, int b) {
         if (n < 0 || b < 2 || b > 16 ) {
             return "";
@@ -29,12 +27,15 @@ public class ConvertNumber {
         }
         return sb.reverse().toString();
     }
-
     public static void main(String[] args) {
-        System.out.print("Enter n = ");
-        int n = sc.nextInt();
-        System.out.println("So " + n + " trong he co so 2 = "
-                + ConvertNumber.convertNumber(n, 2));       
+        int[] arr = { 8, 2, 7, 1, 4, 9, 5};
+        Stack<String> stacks = new Stack<>();
+        for(int i = 0; i < arr.length ; i++){
+            String temp = test.convertNumber(arr[i],2);
+            stacks.add(temp);
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(stacks);
+        
     }
-    
 }
